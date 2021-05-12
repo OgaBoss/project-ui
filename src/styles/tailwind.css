@@ -31776,6 +31776,21 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+#nprogress .bar {
+  background: #EB4D8C !important;
+  height: 5px !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #EB4D8C, 0 0 5px #EB4D8C !important;
+}
+
+#nprogress .spinner-icon {
+  border: solid 5px transparent !important;
+  border-top-color: #EB4D8C !important;
+  border-left-color: #EB4D8C !important;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
