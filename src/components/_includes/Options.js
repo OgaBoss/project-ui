@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Option = ({options}) => {
+const Option = ({options, conjunction}) => {
   if (options && Object.keys(options).length > 0) {
     return (
       <div>
@@ -8,7 +8,7 @@ const Option = ({options}) => {
           Object.keys(options).map((item, index) => {
             return <p key={index} className="text-gray-500 mt-1 font-medium text-xs">
               You can consume {options[item]['quantity']} serving(s) of {options[item]['drink']}
-              {item < Object.keys(options).length ? ', or' : '.'}
+              {item < Object.keys(options).length ? `, ${conjunction}` : '.'}
               <span className="float-right text-pink-500">
                 {options[item]['caffeine_level'] * options[item]['quantity']} mg
               </span>

@@ -47,10 +47,10 @@ const Response = () => {
             }
 
             <h3 className="text-gray-500 mt-6 font-medium">Drinks Option 2 <span className="text-xs italic">(You can only have one of this)</span></h3>
-            <Option options={response['option2']} />
+            <Option options={response['option2']} conjunction="or" />
 
             <h3 className="text-gray-500 mt-6 font-medium">Drinks Option 3 <span className="text-xs italic">(You can have all of this)</span></h3>
-            <Option options={response['option3']} />
+            <Option options={response['option3']} conjunction="and" />
           </div>
         </div>
       </div>

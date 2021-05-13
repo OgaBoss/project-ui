@@ -12,7 +12,7 @@ const options = [
 
 describe('Options', () => {
   test('display drinks options', async () => {
-    const {getByText} = render(<Options options={options} />)
+    const {getByText} = render(<Options options={options} conjunction="or" />)
     expect(getByText('176 mg')).toBeInTheDocument()
   })
 })
