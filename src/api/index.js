@@ -52,7 +52,7 @@ httpClient.interceptors.response.use(
   },
   (error) => {
     NProgress.done();
-    return Promise.reject(error.response.data);
+    return Promise.reject(error.response);
   },
 );
 

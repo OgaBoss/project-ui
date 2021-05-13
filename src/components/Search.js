@@ -42,13 +42,15 @@ const Search = () => {
   })
   return (
     <div>
-      <p className="mb-2 font-semibold text-sm">Select your best drink</p>
-      <Select value={selectedDrink} isLoading={loading} options={options} onChange={handleSelectChange} />
+      <form data-testid="drinks-select">
+        <label htmlFor="drinks" className="font-semibold text-sm">Select your best drink</label>
+        <Select inputId="drinks" className="mt-2" name="drinks" value={selectedDrink} isLoading={loading} options={options} onChange={handleSelectChange} />
+      </form>
       <div className="flex justify-between w-full">
         {error && (selectedDrinkCaffeineLevel >= SAFETY_LIMIT || !selectedDrink.caffeine_per_serving) && <p className="text-red-500 font-bold text-xs mt-1 italic">{error}</p>}
         {
           selectedDrink.caffeine_per_serving && <p className="font-bold text-xs mt-1 italic">
-          <span className={`block text-right ${selectedDrinkCaffeineLevel >= SAFETY_LIMIT ? 'text-red-500 w-9/12' : 'text-green-500 w-full'}`}>{selectedDrinkCaffeineLevel}mg</span>
+          <span data-testid="caffeine-level" className={`block text-right ${selectedDrinkCaffeineLevel >= SAFETY_LIMIT ? 'text-red-500 w-9/12' : 'text-green-500 w-full'}`}>{selectedDrinkCaffeineLevel}mg</span>
           </p>
         }
       </div>
@@ -59,7 +61,7 @@ const Search = () => {
       {
         selectedDrink.caffeine_per_serving && selectedDrinkCaffeineLevel < SAFETY_LIMIT &&
         <div className="mt-6 flex justify-between">
-          <button onClick={handleDrinkSubmit} type="submit" className="text-center outline-none w-4/12 md:w-2/12 py-2 px-4 text-sm font-medium rounded text-white bg-pink-500 hover:bg-pink-700">
+          <button data-testid="submit-drink" onClick={handleDrinkSubmit} type="submit" className="text-center outline-none w-4/12 md:w-2/12 py-2 px-4 text-sm font-medium rounded text-white bg-pink-500 hover:bg-pink-700">
             {
               loading ?
               <Loader

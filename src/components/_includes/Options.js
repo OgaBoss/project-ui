@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Option = ({options}) => {
-
   if (options && Object.keys(options).length > 0) {
     return (
       <div>
@@ -11,8 +10,8 @@ const Option = ({options}) => {
               You can consume {options[item]['quantity']} serving(s) of {options[item]['drink']}
               {item < Object.keys(options).length ? ', or' : '.'}
               <span className="float-right text-pink-500">
-              {options[item]['caffeine_level'] * options[item]['quantity']} mg
-            </span>
+                {options[item]['caffeine_level'] * options[item]['quantity']} mg
+              </span>
             </p>
           })
         }
@@ -23,7 +22,6 @@ const Option = ({options}) => {
       <p className="text-gray-500 mt-1 font-medium text-xs">No available Option</p>
     )
   }
-
 }
 
 export default Option

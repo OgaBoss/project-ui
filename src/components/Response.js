@@ -5,6 +5,7 @@ import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { useSelector, useDispatch } from 'react-redux'
 import {resetState, fetchAllDrinks} from "../redux/drinks_actions";
 import Option from "./_includes/Options";
+
 const Response = () => {
   const {response, selectedDrink, quantity} = useSelector(({drinks}) => drinks)
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const Response = () => {
           <div className="h-24 border-b-4 border-gray-50">
             <p>
               <span className="text-xl font-bold text-gray-500">Drinks Safety Level Response</span>
-              <FontAwesomeIcon onClick={handleStateReset} className="float-right text-2xl text-pink-500 cursor-pointer" icon={faTimes} />
+              <FontAwesomeIcon onClick={handleStateReset} data-testid="close" className="float-right text-2xl text-pink-500 cursor-pointer" icon={faTimes} />
             </p>
             <p className="text-xs text-gray-500 mt-2">Caffeine Consumed: <span className="text-green-500 font-bold">{selectedDrink.caffeine_per_serving * quantity} mg</span></p>
             <p className="text-xs text-gray-500 mt-1">Caffeine leftOver: <span className="text-green-500 font-bold">  {process.env.REACT_APP_SAFETY_LIMIT - (selectedDrink.caffeine_per_serving * quantity)} mg</span></p>

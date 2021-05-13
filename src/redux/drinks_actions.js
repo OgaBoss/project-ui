@@ -16,6 +16,7 @@ export const fetchAllDrinks = () => {
       dispatch(setStateProperty({property: 'loading', payload: false}))
     } catch (e) {
       dispatch(setStateProperty({property: 'error', payload: e}))
+      dispatch(setStateProperty({property: 'loading', payload: false}))
     }
   }
 }
