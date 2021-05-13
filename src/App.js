@@ -11,7 +11,6 @@ function App() {
         <div className={`h-12 px-8 py-3 w-full flex justify-between ${styles.header}`}>
           <a href="/" className="font-bold text-pink-500">DrinksSafety.com</a>
           <div className="flex justify-start">
-            <h5 className="font-normal mr-8 hover:underline cursor-pointer">View Favorites</h5>
             <FontAwesomeIcon className="text-2xl" icon={faUserCircle} />
           </div>
         </div>
