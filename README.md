@@ -1,5 +1,8 @@
 # Akerna Interview React project
 
+Copy the content of .env.example into .env.development.local
+Copy the content of .env.test.example into .env.test
+
 ## Available Scripts
 
 ### `yarn start`
